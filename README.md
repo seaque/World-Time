@@ -16,5 +16,3 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 ## Screenshots
-
-![Home Screen](https://github.com/seaque/World-Time/blob/main/screenshots/Screenshot_1643379382.png)
