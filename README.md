@@ -1,4 +1,4 @@
-# world_time
+# World Time
 
 An app for World time zones.
 
