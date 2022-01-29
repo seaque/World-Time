@@ -17,5 +17,5 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Screenshots
 
-![Screenshot](https://github.com/seaque/World-Time/blob/assets/screenshots/Screenshot_1643379386.png)
-![Screenshot](https://github.com/seaque/World-Time/blob/assets/screenshots/Screenshot_1643379382.png)
+![Screenshot](https://github.com/seaque/World-Time/blob/assets/screenshots/ss2.png)
+![Screenshot](https://github.com/seaque/World-Time/blob/assets/screenshots/ss1.png)
