@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:intl/intl.dart';
 
 class WorldTime {
-
   late String location;
   late String time;
   late String flag;
@@ -19,17 +18,13 @@ class WorldTime {
       Map data = jsonDecode(response.body);
 
       String dateTime = data['datetime'];
-      String utcOffset = data['utc_offset'];
-      int utc_offset = int.parse(utcOffset.substring(1, 3));
-
-      DateTime now = DateTime.parse(dateTime);
-      now = now.add(Duration(hours: utc_offset));
+      int utcOffset = int.parse( data['utc_offset'].toString().substring(1, 3) );
+      DateTime now = DateTime.parse(dateTime).add(Duration(hours: utcOffset));
 
       isDayTime = now.hour > 6 && now.hour < 18 ? true : false; //day is between 6 AM and 6 PM.
-      time = DateFormat.jm().format(now);
-    }
-    catch (e) {
-      print('$e');
+      time = DateFormat.Hm().format(now);
+    } catch (_) {
+
     }
   }
 }

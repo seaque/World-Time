@@ -9,20 +9,20 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
-
   List<WorldTime> locations = [
+    WorldTime(url: 'America/New_York', location: 'New York', flag: 'United-States-icon.png'),
     WorldTime(url: 'Europe/London', location: 'London', flag: 'United-Kingdom-icon.png'),
     WorldTime(url: 'Europe/Berlin', location: 'Berlin', flag: 'Germany-icon.png'),
     WorldTime(url: 'Europe/Moscow', location: 'Moscow', flag: 'Russia-icon.png'),
-    WorldTime(url: 'Europe/Istanbul', location: 'Istanbul', flag: 'Turkey-icon.png'),
-    WorldTime(url: 'America/New_York', location: 'New York', flag: 'United-States-icon.png'),
+    WorldTime(url: 'Europe/Rome', location: 'Rome', flag: 'Italy-icon.png'),
+    WorldTime(url: 'Europe/Istanbul', location: 'Istanbul', flag: 'Turkey-icon.png')
   ];
 
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
     onPrimary: Colors.black87,
     primary: Colors.grey[300],
-    minimumSize: Size(88, 36),
-    padding: EdgeInsets.symmetric(horizontal: 16),
+    minimumSize: const Size(88, 36),
+    padding: const EdgeInsets.symmetric(horizontal: 16),
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(2)),
     ),
@@ -31,12 +31,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
   void updateTime(index) async {
     WorldTime instance = locations[index];
     await instance.getTime();
-    Navigator.pop(context, {
-      'location': instance.location,
-      'time': instance.time,
-      'flag': instance.flag,
-      'isDayTime': instance.isDayTime
-    });
+    Navigator.pop(context, {'location': instance.location, 'time': instance.time, 'flag': instance.flag, 'isDayTime': instance.isDayTime});
   }
 
   @override
@@ -45,7 +40,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.blue[800],
-        title: Text('Choose Location'),
+        title: const Text('Choose Location'),
         centerTitle: true,
         elevation: 0.0,
       ),
